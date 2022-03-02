@@ -76,21 +76,20 @@ class LWWElementGraph
     }
 
     /**
-     * Checks if a vertex is in the Graph
+     * Checks if a vertex is on the Graph
      * @param string $vertexValue
      * @return bool
      */
     public function doesContainVertex(string $vertexValue): bool
     {
         return in_array($vertexValue, $this->vertState);
-//        return $this->vertices->exists(new LWWElementVertex(new DateTimeImmutable(), $vertexValue));
     }
 
     /**
      * Adds an edge on the Graph.
      * This update method is intended for execution only at the source.
-     * @param string $vertexValueA
-     * @param string $vertexValueB
+     * @param string $vertexValueA Value of vertex A of the added edge
+     * @param string $vertexValueB Value of vertex B of the added edge
      * @return void
      * @throws VertexNotFoundInGraphException
      */
@@ -109,6 +108,7 @@ class LWWElementGraph
     }
 
     /**
+     * Removes an edge from the Graph.
      * This update method is intended for execution only at the source.
      * @return void
      */
@@ -120,11 +120,12 @@ class LWWElementGraph
     }
 
     /**
-     * @param string $vertexValueA
-     * @param $vertexValueB
-     * @return bool
+     * Checks if an edge is on the graph.
+     * @param string $vertexValueA Value of vertex A of the edge
+     * @param string $vertexValueB Value of vertex A of the edge
+     * @return bool Whether the edge exists
      */
-    public function doesContainEdge(string $vertexValueA, $vertexValueB): bool
+    public function doesContainEdge(string $vertexValueA, string $vertexValueB): bool
     {
         if (!in_array($vertexValueA, $this->vertState)) {
             // Vertex A does not exist

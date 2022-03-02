@@ -45,6 +45,8 @@ class LWWElementSet
     }
 
     /**
+     * Resolves and returns all current elements of the set,
+     * i.e. which of the registered elements are currently in the set (according to the definition of LWW-Element-Set)
      * @return LWWElement[]
      */
     public function getAllElements(): array
@@ -53,7 +55,7 @@ class LWWElementSet
         $latestAddPerElement = [];
         foreach ($this->addSet as $addedElement) {
             $elementUId = $addedElement->uniqueValue();
-            // Associative arrays act like a hashtable here (hashtable implementation)
+            // Associative array acts like a hashtable here (implemented as hashtable)
             if (!array_key_exists($elementUId, $latestAddPerElement)) {
                 $latestAddPerElement[$elementUId] = $addedElement;
             } elseif ($addedElement->timestamp() > $latestAddPerElement[$elementUId]->timestamp()) {
@@ -63,7 +65,7 @@ class LWWElementSet
         $latestRemPerElement = $this->findLatestRemPerElement();
         $allElements = [];
         foreach ($latestAddPerElement as $uid => $elementWithLatestAdd) {
-            // Associative arrays act like a hashtable here (hashtable implementation)
+            // Associative array acts like a hashtable here (implemented as hashtable)
             if (array_key_exists($uid, $latestRemPerElement)) {
                 $elementWithLatestRem = $latestRemPerElement[$uid];
                 if ($elementWithLatestRem->timestamp() > $elementWithLatestAdd->timestamp()) {

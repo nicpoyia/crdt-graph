@@ -5,7 +5,7 @@ namespace NicPoyia\CRDT\LWW\Graph;
 use NicPoyia\CRDT\LWW\Graph\Element\LWWElement;
 
 /**
- * Class that describes the result of merge operation on an LWW-Element-Set
+ * Class that describes the result of merge operation on an LWW-Element-Set.
  */
 class LWWElementSetMergeResult
 {
