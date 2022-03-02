@@ -1,0 +1,12 @@
+# IDE files
+.idea
+
+# Composer executable
+composer.phar
+
+# This is a library, so excluding dependency resolution state
+vendor
+composer.lock
+
+# PHPUnit result files
+.phpunit.result.cache
