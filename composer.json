@@ -1,29 +1,30 @@
 {
-  "name": "nicpoyia/crdt-lww-element-graph",
-  "description": "Implementation of state-based LWW-Element-Graph",
-  "type": "library",
-  "authors": [
-    {
-      "name": "Nicolas Poyiadjis",
-      "email": "nicpoyia@gmail.com"
+    "name": "nicpoyia/crdt-lww-element-graph",
+    "description": "Implementation of state-based LWW-Element-Graph",
+    "type": "library",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Nicolas Poyiadjis",
+            "email": "nicpoyia@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.4",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "NicPoyia\\CRDT\\LWW\\Graph\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NicPoyia\\CRDT\\LWW\\Graph\\Test\\": "tests"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
     }
-  ],
-  "minimum-stability": "stable",
-  "require": {
-    "php": "^7.4",
-    "ext-json": "*"
-  },
-  "autoload": {
-    "psr-4": {
-      "NicPoyia\\CRDT\\LWW\\Graph\\": "src"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "NicPoyia\\CRDT\\LWW\\Graph\\Test\\": "tests"
-    }
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^9.5"
-  }
 }
